@@ -120,6 +120,9 @@ img{
     width: calc(var(--form-width)/2.8);
     margin-left: 3rem;
 }
+input{
+    border-radius: 20px;
+}
 input:invalid {
     border-color: red;
   }
