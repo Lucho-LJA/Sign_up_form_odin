@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up Form</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="img-container">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="logo/odin-lined.png"> 
+                <p>Aasc-tronix</p>
+            </div>
+        </div>
+    </div>
+    <div class="form-container">
+        <div class="header">
+            <div class="text">
+                <p>This is not a real online service! You know you need something
+                    like this in your life to help you realize your deepest dreams.
+                </p>
+                <p>Sign up <em>now</em> get started</p>
+            </div>
+            <div class="phrase">
+                <p>You <em>know</em> you want to do.</p>
+            </div>
+        </div>
+        <form action="" method="post" class="input-container">
+            <div class="input-data">
+                <legend class="legend-form">Let's do this!</legend>
+                <div class="items">
+                    <div class="item">
+                        <label for="first-name">FIRST NAME:</label>
+                        <input type="text" name="first_name" id="first-name" placeholder="Complete Name" maxlength="20" required>
+                    </div>
+                    <div class="item">
+                        <label for="last-name">LAST NAME:</label>
+                        <input type="text" name="last_name" id="last-name" placeholder="Complete Last Name" maxlength="20" required>
+                    </div>
+                    <div class="item">
+                        <label for="email">EMAIL:</label>
+                        <input type="email" name="email" id="email" placeholder="user@domain" maxlength="20" required>
+                    </div>
+                    <div class="item">
+                        <label for="phone-number">PHONE NUMBER:</label>
+                        <input type="text" name="phone_number" id="phone-number" pattern="((+)?\d{1}(\d{2})?(-)?\d{8}(\d{1})?)" 
+                        title="Enter correct format Eg: 593-939086306, 1-23102481" minlength="9" maxlength="14" placeholder="xxx-xxxxxxxxx">
+                    </div>
+                    <div class="item">
+                        <label for="input-password">PASSWORD:</label>
+                        <input type="password" name="input_password" id="input-password" placeholder="Minimal 6 character with symbols" 
+                        pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" title="Input minimal 6 character and atleast 1 number " minlength="6" required>
+                    </div>
+                    <div class="item">
+                        <label for="confirm-password">CONFIRM PASSWORD:</label>
+                        <input type="password" name="confirm_password" id="confirm-password" placeholder="confirm password" 
+                        pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" minlength="6" required>
+                    </div>
+                </div>
+            </div>
+            <div class="foot">
+                <button type="submit" class="btn">Create Acount</button>
+                <div class="log-in">
+                    Already have an Acount? <a href="https://www.google.com">Log in</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+<script type="text/javascript">
+    window.onload = function () {
+        var txtPassword = document.getElementById("confirm-password");
+        var txtConfirmPassword = document.getElementById("confirm-password");
+        txtPassword.onchange = ConfirmPassword;
+        txtConfirmPassword.onkeyup = ConfirmPassword;
+        function ConfirmPassword() {
+            txtConfirmPassword.setCustomValidity("");
+            if (txtPassword.value != txtConfirmPassword.value) {
+                txtConfirmPassword.setCustomValidity("Passwords do not match.");
+            }
+        }
+    }
+</script>
+</html>
